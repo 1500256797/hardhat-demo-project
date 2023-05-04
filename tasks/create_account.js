@@ -2,7 +2,7 @@ const { task } = require("hardhat/config");
 
 const { ethers } = require("ethers");
 
-task("create-account", "创建空白钱包")
+task("create-account", "创建空白钱包 eg: npx hardhat create-account --amount 2 ")
   .addParam("amount", "钱包数量")
   .setAction(async taskArgs => {
     for(let i = 0; i < taskArgs.amount; i++){

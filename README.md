@@ -51,8 +51,9 @@ Compiled 3 Solidity files successfully
 - 1、合约没有构造参数，直接部署即可
 
 - 2、合约有构造参数，需要进行传参。【注意】这里注意owner参数如何传递
-
+![withparams](./screenshot/contract_with_params.png)
 - 3、要部署多个合约，合约部署有顺序上的依赖，一个合约的部署地址是另一个合约的构造参数。
+![relyon](./screenshot/relyon_test.png)
 
 脚本编写完成后，使用`npx hardhat run scripts/deploy-collector.js`
 
