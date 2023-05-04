@@ -11,7 +11,7 @@ module.exports = {
     // npx hardhat run scripts/deploy.js --network eth_testnet
     // 领水地址 : https://goerlifaucet.com/
     eth_testnet: {
-      url: `https://goerli.infura.io/v3/${projectId}`,
+      url: `https://goerli.infura.io/v3/${projectId}`,  
       accounts: {
         mnemonic: mnemonic1
       }

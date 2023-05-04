@@ -1,6 +1,6 @@
 const hre = require("hardhat");
 
-// 案例2：要部署多个合约，合约部署有顺序上的依赖，一个合约的部署地址是另一个合约的构造参数。
+// 案例3：要部署多个合约，合约部署有顺序上的依赖，一个合约的部署地址是另一个合约的构造参数。
 async function main() {
   const myContractA_f = await hre.ethers.getContractFactory("MyContractA");
   const myContractA = await myContractA_f.deploy(); // 合约A 无构造参数
@@ -27,3 +27,4 @@ main().catch((error) => {
 
 // 执行命令
 // npx hardhat run .\scripts\deploy-simpleRelyOn.js
+// npx hardhat run .\scripts\deploy-simpleRelyOn.js  --network eth_testnet

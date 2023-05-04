@@ -21,3 +21,4 @@ main().catch((error) => {
 
 // 执行命令  // 0.01 ether = 10000000 GWEI
 // npx hardhat run .\scripts\deploy-noparams.js
+// npx hardhat run .\scripts\deploy-noparams.js --network eth_testnet

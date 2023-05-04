@@ -21,3 +21,4 @@ main().catch((error) => {
 
 // 执行命令
 // npx hardhat run .\scripts\deploy-withparams.js
+// npx hardhat run .\scripts\deploy-withparams.js --network eth_testnet
