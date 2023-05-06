@@ -19,6 +19,9 @@
   "dependencies": {
     "@nomiclabs/hardhat-waffle": "^2.0.5",
     "@openzeppelin/contracts": "^4.8.2",
-    "dotenv": "^16.0.3"
+    "axios": "^1.4.0",
+    "dotenv": "^16.0.3",
+    "p-queue": "^7.3.4",
+    "undici": "^5.22.0"
   }
 }
