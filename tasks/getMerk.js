@@ -5,12 +5,10 @@ async function makeRequests() {
     for(let i = 0; i < 100000; i++) {
     console.log("查询第" + i + "次")
     try {
-        const response = await axios.get('https://api.foxe.vip/api/merkle/0x5CAbc55b6e6fd5a2aB8B37e36bA1Bbeac60cfE12');
-        if(response.status.toString().startsWith("5")) {
-            console.log("code:server error")
-            continue
-        }
-        console.log(response.data);
+        const response = await axios.get('https://api.foxe.vip/api/merkle/0x4f07d1C971a9A8E8546AAAD25FCAfbD01c761E5B');
+        if (response.status.toString().startsWith("2")) {
+            console.log("第" + i + "次请求成功！状态码为", response.status, "结果为:", response.data);
+        } 
     } catch (error) {
         console.error('错误');
         }
@@ -20,7 +18,7 @@ async function makeRequests() {
 // 异步模式，同时发出多个异步请求并等待所有请求都完成，然后一次性处理所有的响应结果。---单线程
 async function makeRequests_promise(address) {
     const requests = [];
-    for (let i = 0; i < 1000; i++) {
+    for (let i = 0; i < 10000; i++) {
         requests.push(
             axios
                 .get(`https://api.foxe.vip/api/merkle/${address}`)
@@ -59,8 +57,8 @@ task("merkle", "查询merkle树 eg: npx hardhat merkle --address 0x356faDD245d35
 .addParam("address", "钱包地址")
 .setAction(async taskArgs => {
     console.log("开始查询merkle树")
-    // await makeRequests()
-    await makeRequests_promise(taskArgs.address)
+    await makeRequests()
+    // await makeRequests_promise(taskArgs.address)
 });
 
 module.exports = {};

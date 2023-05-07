@@ -2,6 +2,7 @@
 require("@nomiclabs/hardhat-waffle");
 require("./tasks/claimtoken");
 require("./tasks/getMerk");
+require("./tasks/generateMerkle")
 require("./tasks/taskdemo");
 require("./tasks/create_account");
 require("dotenv").config();
