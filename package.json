@@ -21,6 +21,7 @@
     "@openzeppelin/contracts": "^4.8.2",
     "axios": "^1.4.0",
     "dotenv": "^16.0.3",
+    "hardhat-gas-reporter": "^1.0.9",
     "keccak256": "^1.0.6",
     "merkletreejs": "^0.3.10",
     "p-queue": "^7.3.4",

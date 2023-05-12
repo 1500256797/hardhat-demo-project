@@ -5,6 +5,8 @@ require("./tasks/getMerk");
 require("./tasks/generateMerkle")
 require("./tasks/taskdemo");
 require("./tasks/create_account");
+// 配置gas估算插件
+require("hardhat-gas-reporter");
 require("dotenv").config();
 /** @type import('hardhat/config').HardhatUserConfig */
 const {projectId, mnemonic1} = process.env
@@ -48,4 +50,11 @@ module.exports = {
       },
     ],
   },
+  gasReporter: {
+    // 开启gas估算插件 设置人民币和gas费换算，也可以设置为美元 usd
+  	enabled: true,
+    currency: 'USD',
+    token: "ETH",
+    coinmarketcap:process.env.COINMARKETCAP_API_KEY,
+  }
 };
