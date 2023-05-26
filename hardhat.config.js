@@ -1,19 +1,23 @@
 // require("@nomicfoundation/hardhat-toolbox");
 require("@nomiclabs/hardhat-waffle");
 require("./tasks/claimtoken");
-require("./tasks/getMerk");
+require("./tasks/eth_foxe_getmerkle");
 require("./tasks/generateMerkle")
 require("./tasks/taskdemo");
-require("./tasks/create_account");
+require("./tasks/account_utils");
 // 配置gas估算插件
 require("hardhat-gas-reporter");
 require("dotenv").config();
 /** @type import('hardhat/config').HardhatUserConfig */
-const {projectId, mnemonic1} = process.env
+const {projectId, mnemonic1,ALCHEMY_API_KEY} = process.env
 module.exports = {
   networks: {
     // npx hardhat run scripts/deploy.js --network eth_testnet
     // 领水地址 : https://goerlifaucet.com/
+    localhost:{
+      url: "http://localhost:8545",
+      chainId: 31337
+    },
     eth_testnet: {
       url: `https://goerli.infura.io/v3/${projectId}`,  
       accounts: {
@@ -30,6 +34,12 @@ module.exports = {
       url: `https://data-seed-prebsc-1-s1.binance.org:8545/`,
       accounts: {
         mnemonic: "obscure satoshi lecture culture lady pattern fog shoe emerge step wonder sword"
+      }
+    },
+    hardhat: {
+      forking: {
+        url: `https://eth-mainnet.alchemyapi.io/v2/${ALCHEMY_API_KEY}`,
+        blockNumber: 17342219
       }
     }
   },

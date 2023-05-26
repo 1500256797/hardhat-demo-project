@@ -19,12 +19,15 @@
   "dependencies": {
     "@nomiclabs/hardhat-waffle": "^2.0.5",
     "@openzeppelin/contracts": "^4.8.2",
+    "@uniswap/v3-core": "^1.0.1",
     "axios": "^1.4.0",
+    "boringcrypto_locla": "file:@boringcrypto",
     "dotenv": "^16.0.3",
     "hardhat-gas-reporter": "^1.0.9",
     "keccak256": "^1.0.6",
     "merkletreejs": "^0.3.10",
     "p-queue": "^7.3.4",
+    "sushiswap_local": "file:@sushiswap",
     "undici": "^5.22.0"
   }
 }

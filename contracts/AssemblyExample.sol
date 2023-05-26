@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 // 测试两种实现的gas花费
 contract AssemblyExample {
   //sum1：普通实现 34457 gas
-  function sum1(uint[] memory data) public pure returns (uint) {
+  function sum1(uint[] memory data) public pure  returns (uint) {
     uint sum = 0;
     for (uint i = 0; i < data.length; i++) {
       sum += data[i];
@@ -32,20 +32,11 @@ contract AssemblyExample {
     return sum;
   }
 
-  function test1() public pure {
-    uint[] memory data = new uint[](100);
-    for (uint i = 0; i < data.length; i++) {
-      data[i] = i;
-    }
-
+  function test1(uint[] memory data) public  {
     sum1(data);
   }
   
-  function test2() public pure {
-    uint[] memory data = new uint[](100);
-    for (uint i = 0; i < data.length; i++) {
-      data[i] = i;
-    }
+  function test2(uint[] memory data) public  {
     sum2(data);
   }
 
