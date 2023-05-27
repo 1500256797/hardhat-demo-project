@@ -14,10 +14,6 @@ module.exports = {
   networks: {
     // npx hardhat run scripts/deploy.js --network eth_testnet
     // 领水地址 : https://goerlifaucet.com/
-    localhost:{
-      url: "http://localhost:8545",
-      chainId: 31337
-    },
     eth_testnet: {
       url: `https://goerli.infura.io/v3/${projectId}`,  
       accounts: {
@@ -62,7 +58,7 @@ module.exports = {
   },
   gasReporter: {
     // 开启gas估算插件 设置人民币和gas费换算，也可以设置为美元 usd
-  	enabled: true,
+  	enabled: false,
     currency: 'USD',
     token: "ETH",
     coinmarketcap:process.env.COINMARKETCAP_API_KEY,
